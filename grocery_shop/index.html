@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshNest — Premium Grocery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <svg class="loader-leaf" viewBox="0 0 60 80" fill="none">
+        <path d="M30 75 C30 75 5 55 5 30 C5 15 15 5 30 5 C45 5 55 15 55 30 C55 55 30 75 30 75Z" fill="currentColor" />
+      </svg>
+      <span class="loader-text">FreshNest</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <svg class="nav-leaf" viewBox="0 0 30 40" fill="none">
+        <path d="M15 38 C15 38 2 27 2 15 C2 7 7 2 15 2 C23 2 28 7 28 15 C28 27 15 38 15 38Z" fill="currentColor" />
+      </svg>
+      <span>FreshNest</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#seasonal">Seasonal</a></li>
+      <li><a href="#organic">Organic</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-search-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M21 21l-4.35-4.35" />
+        </svg>
+      </button>
+      <button class="nav-cart-btn" id="cartToggle" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search for fresh produce, dairy, snacks…" />
+      <button id="searchClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Farm to door, same day</p>
+      <h1 class="hero-title">
+        Nature's finest,<br />
+        delivered fresh.
+      </h1>
+      <p class="hero-sub">Hand-picked produce and artisan goods from local farms — at your door within hours.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+          Shop Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+        <button class="btn-ghost">View Seasonal Picks</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card hero-card-float">
+        <div class="hero-card-inner">
+          <div class="hc-info">
+            <p class="hc-name">Hass Avocado</p>
+            <p class="hc-origin">Mexico · Organic</p>
+          </div>
+          <span class="hc-price">$2.40</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Products</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">48h</span><span class="stat-label">Guarantee</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rated</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>🍓 Strawberries</span><span>·</span>
+      <span>🥬 Organic Kale</span><span>·</span>
+      <span>🍋 Meyer Lemon</span><span>·</span>
+      <span>🧀 Aged Cheddar</span><span>·</span>
+      <span>🫐 Blueberries</span><span>·</span>
+      <span>🥦 Broccoli</span><span>·</span>
+      <span>🍇 Grapes</span><span>·</span>
+      <span>🧈 Cultured Butter</span><span>·</span>
+      <span>🍅 Heirloom Tomato</span><span>·</span>
+      <span>🥕 Rainbow Carrots</span><span>·</span>
+      <span>🍓 Strawberries</span><span>·</span>
+      <span>🥬 Organic Kale</span><span>·</span>
+      <span>🍋 Meyer Lemon</span><span>·</span>
+      <span>🧀 Aged Cheddar</span><span>·</span>
+      <span>🫐 Blueberries</span><span>·</span>
+      <span>🥦 Broccoli</span><span>·</span>
+      <span>🍇 Grapes</span><span>·</span>
+      <span>🧈 Cultured Butter</span><span>·</span>
+      <span>🍅 Heirloom Tomato</span><span>·</span>
+      <span>🥕 Rainbow Carrots</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- SEASONAL SECTION -->
+  <section class="seasonal-section" id="seasonal">
+    <div class="seasonal-container">
+      <div class="seasonal-visual">
+        <div class="seasonal-frame">
+          <div class="seasonal-icon">🥬</div>
+        </div>
+      </div>
+      <div class="seasonal-content">
+        <p class="section-eyebrow">Peak Harvest</p>
+        <h2 class="section-title">The Spring Collection.</h2>
+        <p class="section-desc">Discover our curated selection of early spring greens, crisp radishes, and sweet citrus.
+          Sourced directly from local partners operating at the peak of their season.</p>
+        <button class="btn-ghost" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Explore
+          Seasonal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIC SECTION -->
+  <section class="organic-section" id="organic">
+    <div class="organic-container">
+      <div class="organic-content">
+        <p class="section-eyebrow">Certified Pure</p>
+        <h2 class="section-title">Grown the right way.<br /><em>Every single time.</em></h2>
+        <p class="section-desc">Our organic range is held to the highest standard — no synthetic pesticides, no artificial fertilisers, no GMOs. Every item is certified organic and sourced directly from farms we trust.</p>
+        <div class="organic-pillars">
+          <div class="organic-pillar">
+            <span class="pillar-num">40+</span>
+            <span class="pillar-label">Certified farms</span>
+          </div>
+          <div class="organic-divider"></div>
+          <div class="organic-pillar">
+            <span class="pillar-num">100%</span>
+            <span class="pillar-label">No pesticides</span>
+          </div>
+          <div class="organic-divider"></div>
+          <div class="organic-pillar">
+            <span class="pillar-num">Non-GMO</span>
+            <span class="pillar-label">Verified</span>
+          </div>
+        </div>
+        <div class="organic-certs">
+          <span class="cert-item">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M6 10.5l2.5 2.5L14 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            USDA Organic
+          </span>
+          <span class="cert-item">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M6 10.5l2.5 2.5L14 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Non-GMO Project
+          </span>
+          <span class="cert-item">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M6 10.5l2.5 2.5L14 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Rainforest Alliance
+          </span>
+        </div>
+        <button class="btn-ghost" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+          Browse Organic Range
+        </button>
+      </div>
+      <div class="organic-visual">
+        <div class="organic-frame">
+          <div class="organic-produce-grid">
+            <div class="produce-cell produce-cell--lg">🥦</div>
+            <div class="produce-cell">🍎</div>
+            <div class="produce-cell">🥕</div>
+            <div class="produce-cell produce-cell--lg">🍋</div>
+            <div class="produce-cell">🫐</div>
+            <div class="produce-cell">🥬</div>
+          </div>
+          <div class="organic-tag">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2L11 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Certified Organic
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Browse by</p>
+      <h2 class="section-title">Categories</h2>
+    </div>
+    <div class="categories-grid" id="categoriesGrid">
+      <button class="cat-pill active" data-cat="all">All</button>
+      <button class="cat-pill" data-cat="fruits">🍎 Fruits & Veg</button>
+      <button class="cat-pill" data-cat="dairy">🥛 Dairy & Eggs</button>
+      <button class="cat-pill" data-cat="bakery">🍞 Bakery</button>
+      <button class="cat-pill" data-cat="meat">🥩 Meat & Fish</button>
+      <button class="cat-pill" data-cat="beverages">🧃 Beverages</button>
+      <button class="cat-pill" data-cat="snacks">🍫 Snacks</button>
+      <button class="cat-pill" data-cat="pantry">🫙 Pantry</button>
+      <button class="cat-pill" data-cat="frozen">❄️ Frozen</button>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="shop-section" id="shop">
+    <div class="shop-header">
+      <div class="sort-row">
+        <span class="results-count" id="resultsCount">Showing all products</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-text-main">
+        <h2 class="section-title">We believe in honest, real food.</h2>
+      </div>
+      <div class="about-text-sub">
+        <p>FreshNest was founded on a simple principle: food should be as close to nature as possible. We cut out the
+          middlemen, the cold storage, and the endless transit times.</p>
+        <p>By partnering directly with over 40 local organic farms, we ensure that the produce you receive was in the
+          earth just hours before it reached your kitchen counter.</p>
+        <div class="about-signature">
+          <span>The FreshNest Team</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section class="features-strip">
+    <div class="feature">
+      <div class="feature-icon">🌱</div>
+      <h3>100% Organic</h3>
+      <p>Certified organic produce, no compromises.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🚴</div>
+      <h3>Same-Day Delivery</h3>
+      <p>Order before 2pm, receive before dinner.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">♻️</div>
+      <h3>Zero Waste Packing</h3>
+      <p>100% compostable and recyclable packaging.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤝</div>
+      <h3>Local Farmers</h3>
+      <p>Supporting 40+ farms within 150 miles.</p>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Basket</h2>
+      <button class="cart-close" id="cartClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Your basket is empty</p>
+        <span>Add some fresh goods!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-delivery">
+        <span>Delivery</span>
+        <span class="free-delivery">FREE</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <!-- Step 1: Form -->
+    <div class="checkout-step" id="checkoutStep1">
+      <div class="checkout-modal-header">
+        <div>
+          <p class="section-eyebrow">Almost there</p>
+          <h2 class="checkout-title" id="checkoutTitle">Checkout</h2>
+        </div>
+        <button class="checkout-close" id="checkoutClose" aria-label="Close checkout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="checkout-body">
+        <!-- Order Summary -->
+        <div class="checkout-summary-section">
+          <p class="checkout-section-label">Your Order</p>
+          <div class="checkout-order-list" id="checkoutOrderList"></div>
+          <div class="checkout-summary-totals">
+            <div class="checkout-total-row">
+              <span>Subtotal</span>
+              <span id="checkoutSubtotal">$0.00</span>
+            </div>
+            <div class="checkout-total-row">
+              <span>Delivery</span>
+              <span class="free-delivery">FREE</span>
+            </div>
+            <div class="checkout-total-row checkout-grand-total">
+              <span>Total</span>
+              <span id="checkoutGrandTotal">$0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Details -->
+        <div class="checkout-form-section">
+          <p class="checkout-section-label">Delivery Details</p>
+          <form id="checkoutForm" novalidate>
+            <div class="checkout-field-row">
+              <div class="checkout-field">
+                <label for="co-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="co-name" placeholder="Jane Smith" autocomplete="name" required />
+                <span class="field-error" id="co-name-err"></span>
+              </div>
+              <div class="checkout-field">
+                <label for="co-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="co-email" placeholder="jane@example.com" autocomplete="email" required />
+                <span class="field-error" id="co-email-err"></span>
+              </div>
+            </div>
+            <div class="checkout-field">
+              <label for="co-address">Delivery Address <span class="required">*</span></label>
+              <input type="text" id="co-address" placeholder="123 Orchard Lane, Green Valley" autocomplete="street-address" required />
+              <span class="field-error" id="co-address-err"></span>
+            </div>
+            <div class="checkout-field">
+              <label for="co-notes">Delivery Notes <span class="optional">(optional)</span></label>
+              <textarea id="co-notes" rows="2" placeholder="Leave at door, ring bell, etc."></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="checkout-footer">
+        <button class="btn-ghost" id="checkoutBack">← Back to Basket</button>
+        <button class="btn-primary" id="checkoutSubmit">
+          Place Order
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div class="checkout-step checkout-success" id="checkoutStep2" style="display:none">
+      <div class="success-icon">
+        <svg viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 30l8 8L42 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="checkout-title" style="text-align:center">Order Placed!</h2>
+      <p class="success-sub" id="successMessage">Your order has been received and is being prepared.</p>
+      <div class="success-order-info" id="successOrderInfo"></div>
+      <button class="btn-primary success-cta" id="successCta">
+        Continue Shopping
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
